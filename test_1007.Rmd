@@ -1,6 +1,7 @@
 ---
 title: "test_1007"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -671,7 +672,7 @@ x <- heights %>% ggplot(aes(height))
 ```
 
 3. Now we are ready to add a layer to actually make the histogram. Use the object created in the previous exercise and the geom_histogram function to make the histogram.
-```{r}
+```{r, eval=F}
 x + geom_histogram()
 ```
 
@@ -687,7 +688,7 @@ heights %>% ggplot(aes(height))+ geom_density()
 
 
 6. Now we are going to make a density plot for males and females separately. We can do this using the group argument. We assign groups via the aesthetic mapping as each point needs to a group before making the calculations needed to estimate a density.
-```{r}
+```{r, eval=F}
 heights %>% 
   filter(sex == "Female") %>%
   ggplot(aes(height)) +
@@ -702,7 +703,7 @@ heights %>%
 7. We can also assign groups through the color argument. This has the added benefit that it uses color to distinguish the groups. Change the code above to use color.
 
 8. We can also assign groups through the fill argument. This has the added benefit that it uses colors to distinguish the groups, like this:
-```{r}
+```{r, eval=F}
 heights %>% 
   ggplot(aes(height, fill = sex)) + 
   geom_density() 
